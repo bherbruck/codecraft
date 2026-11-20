@@ -1,0 +1,53 @@
+[workspace]
+resolver = "2"
+members = ["crates/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+codecraft-protocol = { path = "crates/protocol" }
+codecraft-llm = { path = "crates/llm" }
+codecraft-tools = { path = "crates/tools" }
+codecraft-core = { path = "crates/core" }
+codecraft-store = { path = "crates/store" }
+codecraft-tui = { path = "crates/tui" }
+anyhow = "1"
+thiserror = "2"
+async-trait = "0.1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+tokio-util = "0.7"
+futures = "0.3"
+reqwest = { version = "0.12", default-features = false, features = ["json", "stream", "rustls-tls"] }
+eventsource-stream = "0.2"
+toml = "0.8"
+clap = { version = "4", features = ["derive"] }
+uuid = { version = "1", features = ["v4", "v7"] }
+chrono = { version = "0.4", features = ["serde"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+ignore = "0.4"
+globset = "0.4"
+grep-searcher = "0.1"
+grep-regex = "0.1"
+grep-matcher = "0.1"
+regex = "1"
+unicode-normalization = "0.1"
+similar = "2"
+dirs = "6"
+rusqlite = { version = "0.32", features = ["bundled"] }
+ratatui = "0.29"
+crossterm = { version = "0.28", features = ["event-stream"] }
+pulldown-cmark = { version = "0.12", default-features = false }
+unicode-width = "0.2"
+textwrap = "0.16"
+tempfile = "3"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true

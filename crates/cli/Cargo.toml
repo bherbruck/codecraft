@@ -1,0 +1,25 @@
+[package]
+name = "codecraft-cli"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "codecraft"
+path = "src/main.rs"
+
+[dependencies]
+codecraft-protocol.workspace = true
+codecraft-llm.workspace = true
+codecraft-core.workspace = true
+codecraft-tools.workspace = true
+codecraft-store.workspace = true
+codecraft-tui.workspace = true
+anyhow.workspace = true
+async-trait.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+tokio-util.workspace = true
+clap.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+crossterm.workspace = true
